@@ -1,28 +1,17 @@
-# KubeArmor is an open source software that enables you to protect your cloud workload at run-time.
-# To learn more about KubeArmor visit: 
-# https://www.accuknox.com/kubearmor/ 
-
-apiVersion: security.kubearmor.com/v1
-kind: KubeArmorHostPolicy
 metadata:
-  name: policytest
+  name: testpolicy
+  namespace: test
 spec:
-  message: "Cronjob/Crontab has been accessed"
-  tags: ["MITRE","T1053-003","Execution","crontab"]
-  nodeSelector:
+  tags: "MITRE"
+  message: "Warning...."
+  selector:
     matchLabels:
-        app: test
-  process: 
-        matchPaths: 
-        - path: /etc/
-        - path: /usr/
-     
-        severity: 2 # Higher severity 
-        action: Block
+      app: testpolicy
   file:
-          matchPaths: 
-             - path: /etc/
-             - path: /usr/
-             
-          action: Block
-          severity: 7 # lowest severity
+    matchPaths:
+      - path: /tmp
+    matchDirectories:
+      - dir: /tmp
+        recursive: true
+    severity: 1
+  Action: deny
