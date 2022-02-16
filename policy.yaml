@@ -11,7 +11,7 @@ spec:
   tags: ["MITRE","T1053-003","Execution","crontab"]
   nodeSelector:
     matchLabels:
-        app: testpod
+        app: test
   process: 
         matchPaths: 
         - path: /etc/
