@@ -5,14 +5,14 @@
 apiVersion: security.kubearmor.com/v1
 kind: KubeArmorPolicy
 metadata:    
-  name: test-mysql-block
+  name: mysql1
   namespace: default        # Change your namespace
 spec:
   tags: ["mysql","system","K8s"]
-  message: "Warning! MySQLdump is blocked"
+  message: "Warning! MySQLdump is blocked - K1"
   selector:      
     matchLabels:        
-      app: testmysql    #change with your own label    
+      app: mysql    #change with your own label    
   process:      
     matchPaths:      
     - path: /usr/bin/mysqldump    
