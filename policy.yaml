@@ -1,17 +1,20 @@
-metadata:
-  name: testpolicy
-  namespace: test
+# KubeArmor is an open source software that enables you to protect your cloud workload at run-time.
+# To learn more about KubeArmor visit: 
+# https://www.accuknox.com/kubearmor/ 
+
+apiVersion: security.kubearmor.com/v1
+kind: KubeArmorPolicy
+metadata:    
+  name: ksp-block-mysql-dump-in-pods
+  namespace: default        # Change your namespace
 spec:
-  tags: "MITRE"
-  message: "Warning...."
-  selector:
-    matchLabels:
-      app: testpolicy
-  file:
-    matchPaths:
-      - path: /tmp
-    matchDirectories:
-      - dir: /tmp
-        recursive: true
-    severity: 1
-  Action: deny
+  tags: ["mysql","system","K8s"]
+  message: "Warning! MySQLdump is blocked"
+  selector:      
+    matchLabels:        
+      app: testpod    #change with your own label    
+  process:      
+    matchPaths:      
+    - path: /usr/bin/mysqldump    
+    action: Block    
+    severity: 6
