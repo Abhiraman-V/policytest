@@ -12,7 +12,7 @@ spec:
   message: "Warning! MySQLdump is blocked - K1"
   selector:      
     matchLabels:        
-      app: mysql    #change with your own label    
+      app: mysql-k1    #change with your own label    
   process:      
     matchPaths:      
     - path: /usr/bin/mysqldump    
