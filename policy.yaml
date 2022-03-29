@@ -18,3 +18,5 @@ spec:
     - path: /usr/bin/mysqldump    
     action: Block    
     severity: 6
+    
+ base-policy: allow
