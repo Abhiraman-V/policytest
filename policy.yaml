@@ -9,7 +9,7 @@ metadata:
   namespace: default        # Change your namespace
 spec:
   tags: ["mysql","system","K8s"]
-  message: "Warning! MySQLdump is blocked - K1 test"
+  message: "Warning! MySQLdump is blocked - K1 tedsdfsdfst"
   selector:      
     matchLabels:        
       app: mysql-k1    #change with your own label    
