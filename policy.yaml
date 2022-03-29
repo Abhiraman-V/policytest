@@ -16,5 +16,4 @@ spec:
   process:      
     matchPaths:      
     - path: /usr/bin/mysqldump    
-    action: Block    
     severity: 6
