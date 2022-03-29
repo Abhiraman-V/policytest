@@ -10,7 +10,7 @@ metadata:
 spec:
   tags: ["mysql","system","K8s"]
   message: "Warning! MySQLdump is blocked - K1"
-  selector:      
+  selector:      ddd
     matchLabels:        
       app: mysql-k1    #change with your own label    
   process:      
