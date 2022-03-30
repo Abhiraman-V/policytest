@@ -17,5 +17,5 @@ spec:
     matchPaths:      
     - path: /usr/bin/mysqldump    
     action: Block    
-    severity: 8
+    severity: 6
 base-policy: allow
