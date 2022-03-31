@@ -19,5 +19,4 @@ spec:
     action: Block    
     severity: 8
 base-policy: Block
-allow me if u can
-done my pr
+
